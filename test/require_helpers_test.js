@@ -28,6 +28,12 @@ describe('loaded helpers', function() {
     var template = Handlebars.compile(source);
     var content = template();
   });
+
+  it('should have debug helper', function() {
+    var source = "{{#debug '10'}}<div>Some HTML</div>{{/debug}}";
+    var template = Handlebars.compile(source);
+    var content = template();
+  });
 });
 
 describe('loaded local helpers', function() {
