@@ -29,3 +29,21 @@ describe('loaded helpers', function() {
     var content = template();
   });
 });
+
+describe('loaded local helpers', function() {
+
+  var hbsHelpers = {};
+
+  before(function() {
+    require('../lib/helper-lib').registerToHelpers(hbsHelpers, {});
+  });
+
+  it('should have css helper', function() {
+    hbsHelpers.css.should.ok;
+  });
+
+  it('should have glob helper', function() {
+    hbsHelpers.glob.should.ok;
+  });
+});
+
